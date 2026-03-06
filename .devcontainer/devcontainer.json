@@ -1,0 +1,18 @@
+{
+    "name": "Android OpenGL Complete",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/devcontainers/features/desktop-lite:1": {
+            "version": "latest",
+            "password": "vscode"
+        }
+    },
+    "forwardPorts": [6080],
+    "portsAttributes": {
+        "6080": {
+            "label": "Android Studio Desktop",
+            "onAutoForward": "openBrowser"
+        }
+    },
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y wget unzip libxrender1 libxtst6 libxi6 libgl1-mesa-glx openjdk-17-jdk && wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2024.2.1.11/android-studio-2024.2.1.11-linux.tar.gz && tar -xzf android-studio-2024.2.1.11-linux.tar.gz && rm android-studio-*.tar.gz && echo 'export DISPLAY=:1' >> ~/.bashrc"
+}
